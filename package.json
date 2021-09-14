@@ -1,0 +1,29 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "A weather application assignment from The Odin Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmaines79/weather-app.git"
+  },
+  "keywords": [
+    "weather"
+  ],
+  "author": "Maines Industries",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cmaines79/weather-app/issues"
+  },
+  "homepage": "https://github.com/cmaines79/weather-app#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.2",
+    "babel-preset-env": "^1.7.0",
+    "webpack": "^5.52.1",
+    "webpack-cli": "^4.8.0"
+  }
+}
