@@ -1,3 +1,7 @@
+# Local config files
+
+/src/config.js
+
 # Logs
 
 logs
