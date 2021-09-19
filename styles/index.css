@@ -1,0 +1,264 @@
+:root {
+  --header-height: 3.125rem;
+  --footer-height: 3.125rem;
+  --temp-gauge-height: 250px;
+  --temp-gauge-width: 250px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#background {
+  display: flex;
+  flex-direction: column;
+  /* height: calc(100vw - var(--header-height) - var(--footer-height)); */
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../img/clear.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* START HEADER */
+header {
+  width: 100%;
+  height: var(--header-height);
+  margin-top: 0.625rem;
+  padding: 0 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#location {
+  font-size: 1.3rem;
+}
+
+.location button {
+  height: 2.5rem;
+  width: 2.5rem;
+  background-color: transparent;
+  border: none;
+}
+
+.location button i {
+  font-size: 1rem;
+}
+
+.location button:hover {
+  cursor: pointer;
+}
+
+.location input {
+  width: 18.75rem;
+  padding: 0.625rem;
+  font-size: 1rem;
+  border: none;
+  border-bottom: 2px solid black;
+  background-color: transparent;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+.temp-selector {
+  display: flex;
+  align-items: center;
+}
+
+.temp-selector p {
+  margin: 0 0.3125rem;
+  font-size: 1rem;
+}
+
+/* START SLIDER SWITCH */
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 3.75rem;
+  height: 2.125rem;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.625rem;
+  width: 1.625rem;
+  left: 0.25rem;
+  bottom: 0.25rem;
+  background-color: grey;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: white;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 2.125rem;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+/* END SLIDER SWITCH */
+
+/* END HEADER */
+
+/* START MAIN */
+
+/* START TEMP GAUGE */
+.main {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 5rem;
+  color: white;
+  line-height: 4rem;
+}
+
+h3 {
+  color: white;
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1rem;
+  color: white;
+}
+
+.current-weather {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: var(--temp-gauge-width);
+  height: var(--temp-gauge-height);
+  /* border: 5px solid green; */
+  border-radius: calc(var(--temp-gauge-height) / 2);
+  background-color: white;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0.1)
+  );
+  z-index: 2;
+  backdrop-filter: blur(2rem);
+}
+
+.daily-forecast {
+  display: flex;
+}
+
+#high-low {
+  margin: 0 5px;
+}
+
+.current-temp {
+  display: flex;
+}
+/* END TEMP GAUGE */
+
+/* START WEATHER-RELATED */
+.weather-related {
+  width: var(--temp-gauge-height);
+  height: var(--temp-gauge-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#weather-icon img {
+  width: 150px;
+  height: auto;
+}
+/* END WEATHER-RELATED */
+
+/* START WIND COMPASS */
+#wind-indicator {
+  width: 150px;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 75px;
+  background-color: white;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0.1)
+  );
+  z-index: 2;
+  backdrop-filter: blur(2rem);
+  text-align: center;
+  color: white;
+}
+
+#wind-direction {
+  font-size: 2rem;
+  font-weight: bold;
+}
+/* END WIND COMPASS */
+
+#wind-gust {
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* END MAIN */
+
+/* START FOOTER */
+footer {
+  height: var(--footer-height);
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: rgba(189, 179, 179, 0.363);
+}
+/* END FOOTER */
